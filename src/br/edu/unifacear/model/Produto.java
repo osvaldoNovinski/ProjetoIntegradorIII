@@ -4,7 +4,7 @@ public class Produto {
 	private int id;
 	private String descricao;
 	private boolean status;
-	//private Marca marca;
+
 	
 	public Produto(int id, String descricao, boolean status) {
 		super();
@@ -12,7 +12,7 @@ public class Produto {
 		this.id = id;
 		this.descricao = descricao;
 		this.status = status;
-		//this.marca = marca ;
+	
 	}
 
 	public int getId() {
@@ -38,27 +38,6 @@ public class Produto {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
-	/*public Marca getMarca() {
-		//new Marca(marca.getId(),marca.getDescricao(),marca.isStatus());
-		return marca;
-	}
-
-	public void setMarca(Marca marca) {
-		//new Marca(marca.getId(),marca.getDescricao(),marca.isStatus());
-		this.marca = marca;
-	}
-	
-	public Produto(int id, String descricao, boolean status) {
-		super();
-		
-		this.id = id;
-		this.descricao = descricao;
-		this.status = status;
-	}*/
-	
-
-
 		
 
 }

@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.unifacear.model.Marca;
+
 import br.edu.unifacear.model.Produto;
 
 public class ProdutoDAO extends DAO {
@@ -114,7 +114,10 @@ public class ProdutoDAO extends DAO {
 			while (rs.next()) {
 				Produto p = new Produto(rs.getInt("id_produto"), rs.getString("desc_produto"),
 						rs.getBoolean("status"));
+				if(p.getDescricao()==rs.getString(desc)){
+				
 				lista.add(p);
+				}
 			}
 			desconectar();
 
