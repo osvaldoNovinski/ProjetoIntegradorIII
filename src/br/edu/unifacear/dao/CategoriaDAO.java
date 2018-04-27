@@ -9,10 +9,10 @@ import br.edu.unifacear.model.Categoria;
 
 public class CategoriaDAO extends DAO {
 	
-	private String SQL_INSERT = "INSERT INTO TB_CATEGORIA (id, nome, status) values (?,?,?);";
-	private String SQL_UPDATE = "UPDATE TB_CATEGORIA SET nome = ?, status = ? WHERE id=?;";
+	private String SQL_INSERT = "INSERT INTO TB_CATEGORIA (id_cat, nome_cat, status_cat) values (?,?,?);";
+	private String SQL_UPDATE = "UPDATE TB_CATEGORIA SET nome_cat = ?, status_cat = ? WHERE id_cat=?;";
 	private String SQL_SELECT = "SELECT * FROM TB_CATEGORIA;";
-	private String SQL_DELET = "TB_CATEGORIA SET status = ? WHERE id = ?;";
+	private String SQL_DELET = "UPDATE TB_CATEGORIA SET status_cat = ? WHERE id = ?;";
 	
 	
 public void inserir (Categoria cat) {
@@ -62,7 +62,7 @@ public List<Categoria> listarTodos(){
 		ResultSet rs = ps.executeQuery();
 		
 		while(rs.next()) {
-			Categoria catego = new Categoria(rs.getInt("id"),rs.getString("nome"),rs.getBoolean("status"));
+			Categoria catego = new Categoria(rs.getInt("id_cat"),rs.getString("nome_cat"),rs.getBoolean("status_cat"));
 			
 			lista.add(catego);
 		}
@@ -79,7 +79,7 @@ public void excluir (Categoria cat) {
 		
 		PreparedStatement ps = db.getConnection().prepareStatement(SQL_DELET);
 		
-		ps.setBoolean(1, cat.isStatus());
+		ps.setBoolean(1, false);
 		ps.setInt(2, cat.getId());
 		
 		ps.executeUpdate();

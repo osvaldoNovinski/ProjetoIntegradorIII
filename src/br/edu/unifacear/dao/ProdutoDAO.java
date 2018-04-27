@@ -9,12 +9,12 @@ import java.util.List;
 import br.edu.unifacear.model.Produto;
 
 public class ProdutoDAO extends DAO {
-	private String SQL_INSERT = "INSERT INTO TB_PRODUTO (id_produto, desc_produto, status) values (?,?,?);";
-	private String SQL_UPDATE = "UPDATE TB_PRODUTO SET desc_produto = ?, status = ? WHERE id_produto = ?;";
-	private String SQL_DELETE = "TB_PRODUTO SET status = ? WHERE id_produto = ?;";
+	private String SQL_INSERT = "INSERT INTO TB_PRODUTO (id_produto, nome_produto, status_produto) values (?,?,?);";
+	private String SQL_UPDATE = "UPDATE TB_PRODUTO SET nome_produto = ?, status_produto = ? WHERE id_produto = ?;";
+	private String SQL_DELETE = "UPDATE TB_PRODUTO SET status_produto = ? WHERE id_produto = ?;";
 	private String SQL_SELECT = "SELECT * FROM TB_PRODUTO;";
 	private String SQL_OBTER_ID = "SELECT * FROM TB_PRODUTO WHERE id_produto = ?;";
-	private String SQL_OBTER_DESC = "SELECT * FROM TB_PRODUTO WHERE desc_produto LIKE'%?%';";
+	private String SQL_OBTER_DESC = "SELECT * FROM TB_PRODUTO WHERE nome_produto LIKE'%?%';";
 
 	public void inserir(Produto p) {
 		try {
@@ -64,7 +64,7 @@ public class ProdutoDAO extends DAO {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				Produto p = new Produto(rs.getInt("id_produto"), rs.getString("desc_produto"), rs.getBoolean("status"));
+				Produto p = new Produto(rs.getInt("id_produto"), rs.getString("nome_produto"), rs.getBoolean("status_produto"));
 
 				lista.add(p);
 			}
@@ -90,7 +90,7 @@ public class ProdutoDAO extends DAO {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				p = new Produto(rs.getInt("id_produto"), rs.getString("desc_produto"), rs.getBoolean("status"));
+				p = new Produto(rs.getInt("id_produto"), rs.getString("nome_produto"), rs.getBoolean("status_produto"));
 			}
 			desconectar();
 
@@ -108,16 +108,16 @@ public class ProdutoDAO extends DAO {
 			conectar();
 
 			PreparedStatement ps = db.getConnection().prepareStatement(SQL_OBTER_DESC);
-			ps.setString(1, desc);
+			ps.setString(1, '%'+desc+'%');
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				Produto p = new Produto(rs.getInt("id_produto"), rs.getString("desc_produto"),
-						rs.getBoolean("status"));
-				if(p.getDescricao()==rs.getString(desc)){
+				Produto p = new Produto(rs.getInt("id_produto"), rs.getString("nome_produto"),
+						rs.getBoolean("status_produto"));
+				
 				
 				lista.add(p);
-				}
+				
 			}
 			desconectar();
 
@@ -134,7 +134,7 @@ public class ProdutoDAO extends DAO {
 			conectar();
 
 			PreparedStatement ps = db.getConnection().prepareStatement(SQL_DELETE);
-			ps.setBoolean(1, p.isStatus());
+			ps.setBoolean(1, false);
 			ps.setInt(2, p.getId());
 
 			ps.executeUpdate();

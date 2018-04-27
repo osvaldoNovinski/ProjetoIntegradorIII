@@ -9,9 +9,9 @@ import br.edu.unifacear.model.Cor;
 
 public class CorDAO extends DAO{
 	
-	private String SQL_INSERT ="INSERT INTO TB_COR (id_cor, nome_cor, satus) values (?,?,?);";
-	private String SQL_UPDATE = "UPDATE TB_COR SET nome_cor =?, status = ?, WHERE id_cor = ?;";
-	private String SQL_DELETE = "TB_COR SET status = ? WHERE id_cor = ?;";
+	private String SQL_INSERT ="INSERT INTO TB_COR (id_cor, nome_cor, status_cor) values (?,?,?);";
+	private String SQL_UPDATE = "UPDATE TB_COR SET nome_cor =?, status_cor = ?, WHERE id_cor = ?;";
+	private String SQL_DELETE = "UPDATE TB_COR SET status_cor = ? WHERE id_cor = ?;";
 	private String SQL_SELECT = "SELECT * FROM TB_COR;";
 	
 	
@@ -58,7 +58,7 @@ public void excluir (Cor cor) {
 		
 		PreparedStatement ps = db.getConnection().prepareStatement(SQL_DELETE);
 		
-		ps.setBoolean(1, cor.isStatus());
+		ps.setBoolean(1, false);
 		ps.setInt(2, cor.getId());
 		
 		ps.executeUpdate();
@@ -79,7 +79,7 @@ public List<Cor> ListarTodas (Cor cor){
 		ResultSet rs = ps.executeQuery();
 		
 		while(rs.next()) {
-			Cor cores = new Cor (rs.getInt("id_cor"),rs.getString("nome_cor"),rs.getBoolean("status"));
+			Cor cores = new Cor (rs.getInt("id_cor"),rs.getString("nome_cor"),rs.getBoolean("status_cor"));
 			
 			lista.add(cores);
 		}

@@ -1,42 +1,46 @@
 package br.edu.unifacear.model;
 
 public class Produto {
-	private int id;
-	private String descricao;
-	private boolean status;
+	private int id_produto;
+	private String nome_produto;
+	private boolean status_produto;
 
 	
-	public Produto(int id, String descricao, boolean status) {
+	public Produto(int id_produto, String nome_produto, boolean status_produto) {
 		super();
 		
-		this.id = id;
-		this.descricao = descricao;
-		this.status = status;
+		this.id_produto = id_produto;
+		this.nome_produto = nome_produto;
+		this.status_produto = status_produto;
 	
+	}
+
+	public Produto() {
+		
 	}
 
 	public int getId() {
-		return id;
+		return id_produto;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.id_produto = id;
 	}
 
 	public String getDescricao() {
-		return descricao;
+		return nome_produto;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescricao(String nome_produto) {
+		this.nome_produto = nome_produto;
 	}
 
 	public boolean isStatus() {
-		return status;
+		return status_produto;
 	}
 
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setStatus(boolean status_produto) {
+		this.status_produto = status_produto;
 	}
 		
 

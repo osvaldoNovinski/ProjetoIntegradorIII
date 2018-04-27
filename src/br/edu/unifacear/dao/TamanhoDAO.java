@@ -9,10 +9,10 @@ import br.edu.unifacear.model.Tamanho;
 
 public class TamanhoDAO extends DAO{
 	
-	private String SQL_INSERT ="INSERT INTO TB_TAMANHO (id,nome,status) values (?,?,?);";
-	private String SQL_UPDATE = "UPDATE TB_TAMANHO nome = ? status = ? where id = ?;";
+	private String SQL_INSERT ="INSERT INTO TB_TAMANHO (id_tamanho,nome_tamanho,status_tamanho) values (?,?,?);";
+	private String SQL_UPDATE = "UPDATE TB_TAMANHO nome_tamanho = ? status_tamanho = ? where id_tamanho = ?;";
 	private String SQL_SELECT = "SELECT * FROM TB_TAMANHO;";
-	private String SQL_DELETE = "TB_TAMANHO status = ? WHERE id = ?;";
+	private String SQL_DELETE = "UPDATE TB_TAMANHO status_tamanho = ? WHERE id_tamanho = ?;";
 	
 	
 public void inserir (Tamanho tamanho) {
@@ -61,7 +61,7 @@ public List<Tamanho> listarTodos (){
 		ResultSet rs = ps.executeQuery();
 		
 		while(rs.next()) {
-			Tamanho tam = new Tamanho (rs.getInt("id"),rs.getString("nome"),rs.getBoolean("status"));
+			Tamanho tam = new Tamanho (rs.getInt("id_tamanho"),rs.getString("nome_tamanho"),rs.getBoolean("status_tamanho"));
 			
 			lista.add(tam);
 			
@@ -82,7 +82,7 @@ public void excluir (Tamanho tamanho) {
 		
 		PreparedStatement ps = db.getConnection().prepareStatement(SQL_DELETE);
 		
-		ps.setBoolean(1, tamanho.isStatus());
+		ps.setBoolean(1, false);
 		ps.setInt(2, tamanho.getId());
 		
 		ps.executeUpdate();
