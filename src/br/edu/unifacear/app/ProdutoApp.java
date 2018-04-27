@@ -24,6 +24,9 @@ public class ProdutoApp {
 		
 		ProdutoSession ps = new ProdutoSession();		
 		/*
+		
+		
+		//alimentar tabela produto
 		Produto p = new Produto (001,"Laicra",true);
 		Produto p1 = new Produto (002,"Soquete",true);
 		Produto p2 = new Produto (003,"Polo",true);
@@ -34,6 +37,8 @@ public class ProdutoApp {
 		ps.inserirProduto(p2);
 		ps.inserirProduto(p3);
 		
+		
+		//alimentar tabela categoria
 		CategoriaSession cs = new CategoriaSession();
 		
 		Categoria c = new Categoria (001, "Camisa", true);
@@ -46,6 +51,8 @@ public class ProdutoApp {
 		cs.inserirCategoria(c3);
 		cs.inserirCategoria(c4);
 		
+		
+		////alimentar tabela genero
 		GeneroSession gs = new GeneroSession ();
 		
 		Genero g = new Genero (001, "Femenino",true);
@@ -56,6 +63,8 @@ public class ProdutoApp {
 		gs.inserirGenero(g2);
 		gs.inserirGenero(g3);
 		
+		
+		//alimentar tabela tamanho
 		TamanhoSession ts = new TamanhoSession();
 		
 		Tamanho t = new Tamanho (001, "P",true);
@@ -66,6 +75,8 @@ public class ProdutoApp {
 		ts.inserirTamanho(t2);
 		ts.inserirTamanho(t3);
 		
+		
+		////alimentar tabela cor
 		CorSession cors = new CorSession();
 		
 		Cor cor = new Cor (001,"Azul", true);
@@ -79,6 +90,9 @@ public class ProdutoApp {
 		cors.inserirCor(cor4);
 		*/
 		
+		/*
+		//Setar id dos objetos para alimentar as tabelas relacionais 
+		ConstruirProdutoSession CPS = new ConstruirProdutoSession();
 		Produto pro = new Produto();
 		pro.setId(1);
 		Categoria ca = new Categoria();
@@ -91,28 +105,32 @@ public class ProdutoApp {
 		ge.setId(2);
 		
 		
-		ConstruirProdutoSession CPS = new ConstruirProdutoSession();
-		/*
 		
+		
+		//alimetar a tabela produto_cat
 		ConstruirProduto CP = new ConstruirProduto();
 		CP.setCa(ca);
 		CP.setPro(pro);
 		
 		CPS.inserir_cat_p(CP);
 		
-		
+		//alimetar a tabela produto_cor
 		ConstruirProduto Pcor = new ConstruirProduto();
 		Pcor.setCor(co);
 		Pcor.setPro(pro);
 		
 		CPS.inserir_cor_p(Pcor);
 		
+		
+		////alimetar a tabela produto_tamanho
 		ConstruirProduto Ptam = new ConstruirProduto();
 		Ptam.setTam(ta);
 		Ptam.setPro(pro);
 		
 		CPS.inserir_tam_p(Ptam);
 		
+		
+		//alimetar a tabela produto_genero
 		ConstruirProduto Pgen = new ConstruirProduto();
 		Pgen.setGen(ge);
 		Pgen.setPro(pro);
@@ -120,6 +138,22 @@ public class ProdutoApp {
 		CPS.inserir_gen_p(Pgen);
 		
 		*/
+		
+		//Setar id dos objetos para utilizar o metodo "listarProdutoCompletoId"
+		
+		ConstruirProdutoSession CPS = new ConstruirProdutoSession();
+		
+		Produto pro = new Produto();
+		pro.setId(1);
+		Categoria ca = new Categoria();
+		ca.setId(2);
+		Tamanho ta = new Tamanho();
+		ta.setId(3);
+		Cor co = new Cor ();
+		co.setId(2);
+		Genero ge = new Genero();
+		ge.setId(2);
+				
 		
 		List <ConstruirProduto> lista = CPS.listarProdutoCompletoId(pro);
 		
