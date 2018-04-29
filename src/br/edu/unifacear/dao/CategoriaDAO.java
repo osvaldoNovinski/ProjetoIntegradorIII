@@ -9,10 +9,10 @@ import br.edu.unifacear.model.Categoria;
 
 public class CategoriaDAO extends DAO {
 	
-	private String SQL_INSERT = "INSERT INTO TB_CATEGORIA (id_cat, nome_cat, status_cat) values (?,?,?);";
-	private String SQL_UPDATE = "UPDATE TB_CATEGORIA SET nome_cat = ?, status_cat = ? WHERE id_cat=?;";
-	private String SQL_SELECT = "SELECT * FROM TB_CATEGORIA;";
-	private String SQL_DELET = "UPDATE TB_CATEGORIA SET status_cat = ? WHERE id = ?;";
+	private String SQL_INSERT = "INSERT INTO CATEGORIA (id_cat, nome_cat, status_cat) values (?,?,?);";
+	private String SQL_UPDATE = "UPDATE CATEGORIA SET nome_cat = ?, status_cat = ? WHERE id_cat=?;";
+	private String SQL_SELECT = "SELECT * FROM CATEGORIA;";
+	private String SQL_DELET = "UPDATE CATEGORIA SET status_cat = ? WHERE id_cat = ?;";
 	
 	
 public void inserir (Categoria cat) {

@@ -9,10 +9,10 @@ import br.edu.unifacear.model.Cor;
 
 public class CorDAO extends DAO{
 	
-	private String SQL_INSERT ="INSERT INTO TB_COR (id_cor, nome_cor, status_cor) values (?,?,?);";
-	private String SQL_UPDATE = "UPDATE TB_COR SET nome_cor =?, status_cor = ?, WHERE id_cor = ?;";
-	private String SQL_DELETE = "UPDATE TB_COR SET status_cor = ? WHERE id_cor = ?;";
-	private String SQL_SELECT = "SELECT * FROM TB_COR;";
+	private String SQL_INSERT ="INSERT INTO COR (id_cor, nome_cor, status_cor) values (?,?,?);";
+	private String SQL_UPDATE = "UPDATE COR SET nome_cor =?, status_cor = ?, WHERE id_cor = ?;";
+	private String SQL_DELETE = "UPDATE COR SET status_cor = ? WHERE id_cor = ?;";
+	private String SQL_SELECT = "SELECT * FROM COR;";
 	
 	
 public void inserir (Cor cor) {

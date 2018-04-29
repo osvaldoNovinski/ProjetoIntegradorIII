@@ -40,6 +40,9 @@ public class ProdutoSession {
 		return DAO.listarTodosPorDesc(desc);
 		
 	}
+	public void inserirQtdaProduto(Produto p) {
+		DAO.alterarQtdaProduto(p);
+	}
 	
 	
 

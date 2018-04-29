@@ -2,15 +2,15 @@ package br.edu.unifacear.model;
 
 public class Genero {
 	
-	private int id;
-	private String nome;
-	private boolean status;
+	private int id_gen;
+	private String nome_gen;
+	private boolean status_gen;
 	
-public Genero(int id, String nome, boolean status) {
+public Genero(int id_gen, String nome_gen, boolean status_gen) {
 	super ();
-	this.id = id;
-	this.nome = nome;
-	this.status = status;
+	this.id_gen = id_gen;
+	this.nome_gen = nome_gen;
+	this.status_gen = status_gen;
 }
 
 public Genero () {
@@ -18,27 +18,27 @@ public Genero () {
 }
 
 public int getId() {
-	return id;
+	return id_gen;
 }
 
-public void setId(int id) {
-	this.id = id;
+public void setId(int id_gen) {
+	this.id_gen = id_gen;
 }
 
 public String getNome() {
-	return nome;
+	return nome_gen;
 }
 
-public void setNome(String nome) {
-	this.nome = nome;
+public void setNome(String nome_gen) {
+	this.nome_gen = nome_gen;
 }
 
 public boolean isStatus() {
-	return status;
+	return status_gen;
 }
 
-public void setStatus(boolean status) {
-	this.status = status;
+public void setStatus(boolean status_gen) {
+	this.status_gen = status_gen;
 }
 
 

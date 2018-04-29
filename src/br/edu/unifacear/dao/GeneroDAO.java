@@ -9,10 +9,10 @@ import br.edu.unifacear.model.Genero;
 
 public class GeneroDAO extends DAO {
 	
-	private String SQL_INSERT = "INSERT INTO TB_GENERO (id_genero, nome_genero, status_genero) values (?,?,?);";
-	private String SQL_UPDATE = "UPDATE TB_GENERO SET nome_genero =?, status_genero = ?, WHERE id_genero = ?;";
-	private String SQL_DELETE = "UPDATE TB_GENERO SET status_genero = ? WHERE id_genero = ?;";
-	private String SQL_SELECT = "SELECT * FROM TB_genero;";
+	private String SQL_INSERT = "INSERT INTO GENERO (id_gen, nome_gen, status_gen) values (?,?,?);";
+	private String SQL_UPDATE = "UPDATE GENERO SET nome_gen =?, status_gen = ?, WHERE id_gen = ?;";
+	private String SQL_DELETE = "UPDATE GENERO SET status_gen = ? WHERE id_gen = ?;";
+	private String SQL_SELECT = "SELECT * FROM GENERO;";
 	
 	
 public void inserir (Genero gen) {

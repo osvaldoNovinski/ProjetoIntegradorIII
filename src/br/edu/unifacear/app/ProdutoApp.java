@@ -3,19 +3,9 @@ package br.edu.unifacear.app;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.unifacear.dao.ProdutoDAO;
-import br.edu.unifacear.model.Categoria;
-import br.edu.unifacear.model.ConstruirProduto;
-import br.edu.unifacear.model.Cor;
-import br.edu.unifacear.model.Genero;
-import br.edu.unifacear.model.Produto;
-import br.edu.unifacear.model.Tamanho;
-import br.edu.unifacear.session.CategoriaSession;
-import br.edu.unifacear.session.ConstruirProdutoSession;
-import br.edu.unifacear.session.CorSession;
-import br.edu.unifacear.session.GeneroSession;
-import br.edu.unifacear.session.ProdutoSession;
-import br.edu.unifacear.session.TamanhoSession;
+import br.edu.unifacear.dao.*;
+import br.edu.unifacear.model.*;
+import br.edu.unifacear.session.*;
 
 public class ProdutoApp {
 
@@ -24,20 +14,6 @@ public class ProdutoApp {
 		
 		ProdutoSession ps = new ProdutoSession();		
 		/*
-		
-		
-		//alimentar tabela produto
-		Produto p = new Produto (001,"Laicra",true);
-		Produto p1 = new Produto (002,"Soquete",true);
-		Produto p2 = new Produto (003,"Polo",true);
-		Produto p3 = new Produto (004,"Manga Longa",true);		
-		
-		ps.inserirProduto(p);
-		ps.inserirProduto(p1);
-		ps.inserirProduto(p2);
-		ps.inserirProduto(p3);
-		
-		
 		//alimentar tabela categoria
 		CategoriaSession cs = new CategoriaSession();
 		
@@ -88,97 +64,40 @@ public class ProdutoApp {
 		cors.inserirCor(cor2);
 		cors.inserirCor(cor3);
 		cors.inserirCor(cor4);
+		
+		
+		//alimentar unidades de medida
+		UnidadeSession uni = new UnidadeSession();
+		Unidade un = new Unidade(001,"cm3",true);
+		Unidade un2 = new Unidade(002,"polegada",true);
+		Unidade un3 = new Unidade(003,"alquere",true);
+		
+		uni.inserirUnidade(un);
+		uni.inserirUnidade(un2);
+		uni.inserirUnidade(un3);
 		*/
 		
-		/*
-		//Setar id dos objetos para alimentar as tabelas relacionais 
-		ConstruirProdutoSession CPS = new ConstruirProdutoSession();
-		Produto pro = new Produto();
-		pro.setId(1);
+		
+		
+		//alimentar tabela produto
+		
 		Categoria ca = new Categoria();
-		ca.setId(2);
-		Tamanho ta = new Tamanho();
-		ta.setId(3);
-		Cor co = new Cor ();
-		co.setId(2);
+		ca.setId(001);
+		Cor co = new Cor();
+		co.setId(001);
 		Genero ge = new Genero();
-		ge.setId(2);
+		ge.setId(001);
+		Unidade un = new Unidade();
+		un.setId_un(001);
+		Tamanho tam = new Tamanho();
+		tam.setId(001);
 		
 		
+		Produto p = new Produto (001,"Laicra",true,0,ca,co,ge,2,1,un,tam);
 		
+		ps.inserirProduto(p);
 		
-		//alimetar a tabela produto_cat
-		ConstruirProduto CP = new ConstruirProduto();
-		CP.setCa(ca);
-		CP.setPro(pro);
-		
-		CPS.inserir_cat_p(CP);
-		
-		//alimetar a tabela produto_cor
-		ConstruirProduto Pcor = new ConstruirProduto();
-		Pcor.setCor(co);
-		Pcor.setPro(pro);
-		
-		CPS.inserir_cor_p(Pcor);
-		
-		
-		////alimetar a tabela produto_tamanho
-		ConstruirProduto Ptam = new ConstruirProduto();
-		Ptam.setTam(ta);
-		Ptam.setPro(pro);
-		
-		CPS.inserir_tam_p(Ptam);
-		
-		
-		//alimetar a tabela produto_genero
-		ConstruirProduto Pgen = new ConstruirProduto();
-		Pgen.setGen(ge);
-		Pgen.setPro(pro);
-		
-		CPS.inserir_gen_p(Pgen);
-		
-		*/
-		
-		//Setar id dos objetos para utilizar o metodo "listarProdutoCompletoId"
-		
-		ConstruirProdutoSession CPS = new ConstruirProdutoSession();
-		
-		Produto pro = new Produto();
-		pro.setId(1);
-		Categoria ca = new Categoria();
-		ca.setId(2);
-		Tamanho ta = new Tamanho();
-		ta.setId(3);
-		Cor co = new Cor ();
-		co.setId(2);
-		Genero ge = new Genero();
-		ge.setId(2);
-				
-		
-		List <ConstruirProduto> lista = CPS.listarProdutoCompletoId(pro);
-		
-		//lista = CPS.listarProdutoCompletoId(pro);
-		
-		for (ConstruirProduto d: lista ) {
-			System.out.println(d.getCa().getNome()+" - "+d.getPro().getDescricao()+" - "+d.getCor().getNome()+" - "+d.getGen().getNome()+" - "+d.getTam().getNome());
-		}
-		
-		
-		/*
-		List<Produto> lista = ps.listarTodos();
-		
-		for (Produto p: lista) {
-			System.out.println(" id: "+p.getId()+ "\n Descrição: "+p.getDescricao()+"\n Status: "+p.isStatus());
-			System.out.println("-----------------\n");
-		}
-		*/
-		
-		//Produto p = new Produto (001,"Shorts",true);
-		//ps.atualizarProduto(p);
-		
-		//Produto p = new Produto (001,"Shorts",true);
-		//ps.excluirProduto(p);
-		
+	
 
 	}
 

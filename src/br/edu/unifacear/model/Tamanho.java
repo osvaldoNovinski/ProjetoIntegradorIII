@@ -2,16 +2,16 @@ package br.edu.unifacear.model;
 
 public class Tamanho {
 	
-	private int id;
-	private String nome;
-	private boolean status;
+	private int id_tam;
+	private String nome_tam;
+	private boolean status_tam;
 	
 	
-public Tamanho (int id, String nome, boolean status) {
+public Tamanho (int id_tam, String nome_tam, boolean status_tam) {
 	super ();
-	this.id = id;
-	this.nome = nome;
-	this.status = status;
+	this.id_tam = id_tam;
+	this.nome_tam = nome_tam;
+	this.status_tam = status_tam;
 }
 
 public Tamanho() {
@@ -19,27 +19,27 @@ public Tamanho() {
 }
 
 public int getId() {
-	return id;
+	return id_tam;
 }
 
-public void setId(int id) {
-	this.id = id;
+public void setId(int id_tam) {
+	this.id_tam = id_tam;
 }
 
 public String getNome() {
-	return nome;
+	return nome_tam;
 }
 
-public void setNome(String nome) {
-	this.nome = nome;
+public void setNome(String nome_tam) {
+	this.nome_tam = nome_tam;
 }
 
 public boolean isStatus() {
-	return status;
+	return status_tam;
 }
 
-public void setStatus(boolean status) {
-	this.status = status;
+public void setStatus(boolean status_tam) {
+	this.status_tam = status_tam;
 }
 
 

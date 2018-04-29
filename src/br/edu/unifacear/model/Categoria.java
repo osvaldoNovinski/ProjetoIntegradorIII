@@ -2,16 +2,16 @@ package br.edu.unifacear.model;
 
 public class Categoria {
 	
-	private int id;
-	private String nome;
-	private boolean status;
+	private int id_cat;
+	private String nome_cat;
+	private boolean status_cat;
 	
 	
-public Categoria (int id, String nome, boolean status) {
+public Categoria (int id_cat, String nome_cat, boolean status_cat) {
 	super();
-	this.id = id;
-	this.nome = nome;
-	this.status = status;
+	this.id_cat = id_cat;
+	this.nome_cat = nome_cat;
+	this.status_cat = status_cat;
 }
 
 public Categoria () {
@@ -19,27 +19,27 @@ public Categoria () {
 }
 
 public int getId() {
-	return id;
+	return id_cat;
 }
 
-public void setId(int id) {
-	this.id = id;
+public void setId(int id_cat) {
+	this.id_cat = id_cat;
 }
 
 public String getNome() {
-	return nome;
+	return nome_cat;
 }
 
-public void setNome(String nome) {
-	this.nome = nome;
+public void setNome(String nome_cat) {
+	this.nome_cat = nome_cat;
 }
 
 public boolean isStatus() {
-	return status;
+	return status_cat;
 }
 
-public void setStatus(boolean status) {
-	this.status = status;
+public void setStatus(boolean status_cat) {
+	this.status_cat = status_cat;
 }
 
 }

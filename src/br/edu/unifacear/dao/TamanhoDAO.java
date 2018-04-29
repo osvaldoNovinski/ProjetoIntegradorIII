@@ -9,10 +9,10 @@ import br.edu.unifacear.model.Tamanho;
 
 public class TamanhoDAO extends DAO{
 	
-	private String SQL_INSERT ="INSERT INTO TB_TAMANHO (id_tamanho,nome_tamanho,status_tamanho) values (?,?,?);";
-	private String SQL_UPDATE = "UPDATE TB_TAMANHO nome_tamanho = ? status_tamanho = ? where id_tamanho = ?;";
-	private String SQL_SELECT = "SELECT * FROM TB_TAMANHO;";
-	private String SQL_DELETE = "UPDATE TB_TAMANHO status_tamanho = ? WHERE id_tamanho = ?;";
+	private String SQL_INSERT ="INSERT INTO TAMANHO (id_tam,nome_tam,status_tam) values (?,?,?);";
+	private String SQL_UPDATE = "UPDATE TAMANHO nome_tam = ? status_tam = ? where id_tam = ?;";
+	private String SQL_SELECT = "SELECT * FROM TAMANHO;";
+	private String SQL_DELETE = "UPDATE TAMANHO status_tam = ? WHERE id_tam = ?;";
 	
 	
 public void inserir (Tamanho tamanho) {
